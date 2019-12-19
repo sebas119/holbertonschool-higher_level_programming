@@ -15,18 +15,10 @@ def roman_to_int(roman_string):
     nElem = len(resulList)
     if nElem <= 0:
         return None
-    ans = resulList[0]
-    nextEl = 0
+    ans = 0
     for i in range(nElem):
-        nextEl += 1
-        if (nextEl >= nElem):
-            break
-        if (resulList[i] < resulList[nextEl]):
-            ans = resulList[nextEl] - ans
+        if i > 0 and resulList[i] > resulList[i-1]:
+            ans += resulList[i] - 2 * resulList[i-1]
         else:
-            ans += resulList[nextEl]
-        if (ans < 0):
-            ans = None
-            break
-    print(resulList)
+            ans += resulList[i]
     return ans
