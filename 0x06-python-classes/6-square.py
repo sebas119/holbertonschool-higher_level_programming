@@ -2,8 +2,8 @@
 class Square:
 
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def position(self):
@@ -40,9 +40,9 @@ class Square:
         else:
             for i in range(self.position[1]):
                 print()
-            for i in range(0, self.__size):
+            for i in range(self.__size):
                 for k in range(self.position[0]):
                     print(" ", end='')
-                for j in range(0, self.__size):
+                for j in range(self.__size):
                     print("#", end='')
                 print()
