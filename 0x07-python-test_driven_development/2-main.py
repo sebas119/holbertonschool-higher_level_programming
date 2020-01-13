@@ -15,3 +15,7 @@ print(matrix)
 matrix = [[1, 2], [4, 5]]
 print(matrix_divided(matrix, float('-inf')))
 print(matrix)
+
+matrix = [[]]
+print(matrix_divided(matrix, 4))
+print(matrix)

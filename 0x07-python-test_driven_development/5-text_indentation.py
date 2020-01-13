@@ -14,15 +14,14 @@ def text_indentation(text):
 
     if (not isinstance(text, str)):
         raise TypeError("text must be a string")
-    text = text.replace(':', ':*&*').replace('?',
-                                             '?*&*').replace('.', '.*&*')
-    text = text.split('*&*')
+    flag = False
+    for c in text:
 
-    new = []
-    for el in text:
-        new.append(el.strip())
-    for val in new:
-        if (val[-1] in {':', '?', '.'}):
-            print(val, end='\n\n')
+        if (flag is True and c is ' '):
+            continue
+        flag = False
+        if (c in {'.', ':', '?'}):
+            print(c, end="\n\n")
+            flag = True
         else:
-            print(val, end='')
+            print(c, end='')
