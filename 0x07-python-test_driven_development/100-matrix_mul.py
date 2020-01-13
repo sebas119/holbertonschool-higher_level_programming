@@ -1,7 +1,16 @@
 #!/usr/bin/python3
 
+"""
+This is the matrix_mul module and supplies matrix_mul(). For example,
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+"""
+
 
 def matrix_mul(m_a, m_b):
+    """
+    Function that multiplies 2 matrices
+    """
 
     if (not isinstance(m_a, list) or not isinstance(m_a, list)):
         raise TypeError("m_a must be a list or m_b must be a list")
