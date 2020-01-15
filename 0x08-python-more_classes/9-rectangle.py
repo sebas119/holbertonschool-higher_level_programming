@@ -18,7 +18,7 @@ class Rectangle(object):
     @property
     def width(self):
         """Get width"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -33,7 +33,7 @@ class Rectangle(object):
     @property
     def height(self):
         """Get height"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -69,7 +69,7 @@ class Rectangle(object):
 
     def __repr__(self):
         """String representation of the specified instance"""
-        return "Rectangle({},{})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         """Destructor method"""
