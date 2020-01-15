@@ -7,7 +7,7 @@ class Rectangle(object):
 
     @property
     def width(self):
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -20,7 +20,7 @@ class Rectangle(object):
 
     @property
     def height(self):
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -53,4 +53,4 @@ class Rectangle(object):
         return ans
 
     def __repr__(self):
-        return "Rectangle({},{})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
