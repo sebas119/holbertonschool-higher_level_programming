@@ -1,0 +1,30 @@
+The ``1-my_list.pyr`` module
+======================
+
+Using ``MyList``
+-------------------
+
+Now use it:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> own_list = MyList([1, 2, 3])
+    >>> print(own_list)
+    [1, 2, 3]
+
+    >>> own_list = MyList()
+    >>> type(own_list)
+    <class '1-my_list.MyList'>
+
+    >>> print(own_list)
+    []
+
+    >>> own_list = MyList([8, 5], [5, 9, 21])
+    Traceback (most recent call last):
+        ...
+    TypeError: list() takes at most 1 argument (2 given)
+
+    >>> own_list = MyList(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: 'NoneType' object is not iterable
