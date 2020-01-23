@@ -99,10 +99,40 @@ class Rectangle(Base):
     def __str__(self):
         """String representation of the class"""
 
-        return "[Rectangle] ({}) {}/{} - <{}>/<{}>".format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id,
             self.x,
             self.y,
             self.width,
             self.height
         )
+
+    def update(self, *args):
+        """
+        Update the attributes values
+
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+
+        if args is None or len(args) == 0:
+            return
+        n = 1
+        for arg in args:
+            if n == 1:
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = arg
+            elif n == 2:
+                self.width = arg
+            elif n == 3:
+                self.height = arg
+            elif n == 4:
+                self.x = arg
+            elif n == 5:
+                self.y = arg
+            n += 1
