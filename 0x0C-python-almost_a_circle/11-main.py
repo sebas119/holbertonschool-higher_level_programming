@@ -28,3 +28,6 @@ if __name__ == "__main__":
     s1.update(size=7, id=89, y=1)
     print(s1)
 
+    s2 = Square(5)
+    s2.update(None, 5, 0)
+    print(s2)
