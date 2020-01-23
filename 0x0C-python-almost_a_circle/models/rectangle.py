@@ -153,3 +153,28 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle
+
+        This dictionary must contain:
+        id
+        width
+        height
+        x
+        y
+        """
+
+        new = {}
+        if hasattr(self, "id"):
+            new.update({"id": self.id})
+        if hasattr(self, "width"):
+            new.update({"width": self.width})
+        if hasattr(self, "height"):
+            new.update({"height": self.height})
+        if hasattr(self, "x"):
+            new.update({"x": self.x})
+        if hasattr(self, "y"):
+            new.update({"y": self.y})
+        return new
