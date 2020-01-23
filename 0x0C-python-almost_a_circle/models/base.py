@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Defines a class Base.""""
+"""Defines a class Base."""
 
 
 class Base:
