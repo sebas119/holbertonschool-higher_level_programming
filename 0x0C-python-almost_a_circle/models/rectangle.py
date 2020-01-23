@@ -107,7 +107,7 @@ class Rectangle(Base):
             self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update the attributes values
 
@@ -118,21 +118,38 @@ class Rectangle(Base):
         5th argument should be the y attribute
         """
 
-        if args is None or len(args) == 0:
-            return
-        n = 1
-        for arg in args:
-            if n == 1:
-                if arg is None:
-                    self.__init__(self.width, self.height, self.x, self.y)
-                else:
-                    self.id = arg
-            elif n == 2:
-                self.width = arg
-            elif n == 3:
-                self.height = arg
-            elif n == 4:
-                self.x = arg
-            elif n == 5:
-                self.y = arg
-            n += 1
+        if args is not None and len(args) > 0:
+            n = 1
+            for arg in args:
+                if n == 1:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif n == 2:
+                    self.width = arg
+                elif n == 3:
+                    self.height = arg
+                elif n == 4:
+                    self.x = arg
+                elif n == 5:
+                    self.y = arg
+                n += 1
+        else:
+            if kwargs is None:
+                return
+            for key, value in kwargs.items():
+
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
