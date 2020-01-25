@@ -166,15 +166,10 @@ class Rectangle(Base):
         y
         """
 
-        new = {}
-        if hasattr(self, "id"):
-            new.update({"id": self.id})
-        if hasattr(self, "width"):
-            new.update({"width": self.width})
-        if hasattr(self, "height"):
-            new.update({"height": self.height})
-        if hasattr(self, "x"):
-            new.update({"x": self.x})
-        if hasattr(self, "y"):
-            new.update({"y": self.y})
-        return new
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
