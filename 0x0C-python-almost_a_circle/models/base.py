@@ -3,6 +3,7 @@
 """Defines a class Base."""
 
 import json
+import csv
 
 
 class Base:
@@ -85,3 +86,26 @@ class Base:
             list_instances.append(cls.create(**el))
 
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Writes the list_objs to a file in this format:
+        * Rectangle: <id>,<width>,<height>,<x>,<y>
+        * Square: <id>,<size>,<x>,<y>
+        """
+
+        filename = cls.__name__
+        for el in list_objs:
+            print(cls.__name__ == "Rectangle")
+            print(cls.__name__ == "Square")
+            for key, value in el.to_dictionary().items():
+                pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+
+        """
+
+        filename = cls.__name__
