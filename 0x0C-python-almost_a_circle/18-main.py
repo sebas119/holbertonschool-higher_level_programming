@@ -40,3 +40,8 @@ if __name__ == "__main__":
     for square in list_squares_output:
         print("[{}] {}".format(id(square), square))
 
+    """
+    # Case FileNotFoundError
+    list_rectangles_output = Rectangle.load_from_file()
+    print(list_rectangles_output)
+    """
