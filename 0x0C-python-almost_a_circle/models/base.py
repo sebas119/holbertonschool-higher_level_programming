@@ -22,7 +22,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        returns the JSON string representation of list_dictionaries
+        Returns the JSON string representation of list_dictionaries
         """
 
         if (list_dictionaries is None):
@@ -33,7 +33,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        writes the JSON string representation of list_objs to a file
+        Writes the JSON string representation of list_objs to a file
         """
         dataJson = "[]"
         if list_objs is not None:
@@ -45,3 +45,14 @@ class Base:
 
         with open(cls.__name__ + ".json", "w") as file:
             file.write(dataJson)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation json_string
+        """
+
+        if json_string is None or json_string is "[]":
+            return []
+
+        return json.loads(json_string)
