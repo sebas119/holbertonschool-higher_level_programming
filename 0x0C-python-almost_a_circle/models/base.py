@@ -103,7 +103,7 @@ class Base:
                 for el in list_objs:
                     if cls.__name__ == "Rectangle":
                         data = ["id", "width", "height", "x", "y"]
-                    elif cls.__name__ == "Square":
+                    else:
                         data = ["id", "size", "x", "y"]
                     for key, value in el.to_dictionary().items():
                         if len(data) == 5:
@@ -152,7 +152,7 @@ class Base:
                     if cls.__name__ == "Rectangle":
                         data = {"id": 0, "width": 0,
                                 "height": 0, "x": 0, "y": 0}
-                    elif cls.__name__ == "Square":
+                    else:
                         data = {"id": 0, "size": 0, "x": 0, "y": 0}
                     if len(clean_list) == 5:
                         data["id"] = int(clean_list[0])
