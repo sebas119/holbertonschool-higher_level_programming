@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""Defines a class TestBaseMethods for testing purposes"""
+
 from models.base import Base
 import unittest
 
