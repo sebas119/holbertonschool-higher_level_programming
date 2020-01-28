@@ -57,6 +57,7 @@ class TestRectangleMethods(unittest.TestCase):
             r.x = {}
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(10, 2, 3, -1)
+        Base._Base__nb_objects = 0
 
     def test_area_value(self):
         """
@@ -71,6 +72,7 @@ class TestRectangleMethods(unittest.TestCase):
 
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
+        Base._Base__nb_objects = 0
 
     def test_display_rectangle_4_6(self):
         """
@@ -85,6 +87,7 @@ class TestRectangleMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = "####\n####\n####\n####\n####\n####\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
 
     def test_display_rectangle_2_2(self):
         """
@@ -99,6 +102,7 @@ class TestRectangleMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = "##\n##\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
 
     def test_display_rectangle_2_3_2_2(self):
         """
@@ -113,6 +117,7 @@ class TestRectangleMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
 
     def test_display_rectangle_3_2_1_0(self):
         """
@@ -127,10 +132,11 @@ class TestRectangleMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = " ###\n ###\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
 
-    def test_display_rectangle_str_1(self):
+    def test_rectangle_str_1(self):
         """
-        Check the display method
+        Check the __str__ method
         """
 
         capture = io.StringIO()
@@ -141,10 +147,11 @@ class TestRectangleMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = "[Rectangle] (12) 2/1 - 4/6\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
 
-    def test_display_rectangle_str_2(self):
+    def test_rectangle_str_2(self):
         """
-        Check the display method
+        Check the __str__ method
         """
 
         capture = io.StringIO()
@@ -153,5 +160,38 @@ class TestRectangleMethods(unittest.TestCase):
         print(r1)
         out = capture.getvalue()
         sys.stdout = sys.__stdout__
-        display = "[Rectangle] (11) 1/0 - 5/5\n"
+        display = "[Rectangle] (1) 1/0 - 5/5\n"
         self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
+
+    def test_rectangle_update_args_1(self):
+        """
+        Check the update method with args
+        """
+
+        capture = io.StringIO()
+        sys.stdout = capture
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        print(r1)
+        out = capture.getvalue()
+        sys.stdout = sys.__stdout__
+        display = "[Rectangle] (89) 10/10 - 10/10\n"
+        self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
+
+    def test_rectangle_update_kwargs_1(self):
+        """
+        Check the update method with kwargs
+        """
+
+        capture = io.StringIO()
+        sys.stdout = capture
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(height=1)
+        print(r1)
+        out = capture.getvalue()
+        sys.stdout = sys.__stdout__
+        display = "[Rectangle] (1) 10/10 - 10/1\n"
+        self.assertEqual(display, out)
+        Base._Base__nb_objects = 0
