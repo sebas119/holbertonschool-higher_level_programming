@@ -51,6 +51,36 @@ Now use it:
     >>> print(own_list)
     []
 
+    >>> own_list.print_sorted()
+    []
+
+    >>> own_list = MyList([1, 2, 3])
+    >>> new_list = own_list.print_sorted()
+    [1, 2, 3]
+
+    >>> isinstance(new_list, list)
+    False
+
+    >>> type(new_list) == list
+    False
+
+    >>> own_list is new_list
+    False
+
+    >>> own_list == new_list
+    False
+
+    >>> print(type(new_list))
+    <class 'NoneType'>
+    >>> print(type(own_list))
+    <class '1-my_list.MyList'>
+
+    >>> my_list = MyList([1, 4, 2, 3, 5])
+    >>> new_list = my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> new_list is my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    True
 
     >>> own_list = MyList([])
     >>> print(own_list.print_sorted)
@@ -80,31 +110,5 @@ Now use it:
     [1, 2, 3]
     False
 
-    >>> own_list = MyList([1, 2, 3])
-    >>> new_list = own_list.print_sorted()
-    [1, 2, 3]
 
-    >>> isinstance(new_list, list)
-    False
-
-    >>> type(new_list) == list
-    False
-
-    >>> own_list is new_list
-    False
-
-    >>> own_list == new_list
-    False
-
-    >>> print(type(new_list))
-    <class 'NoneType'>
-    >>> print(type(own_list))
-    <class '1-my_list.MyList'>
-
-    >>> my_list = MyList([1, 4, 2, 3, 5])
-    >>> new_list = my_list.print_sorted()
-    [1, 2, 3, 4, 5]
-    >>> new_list is my_list.print_sorted()
-    [1, 2, 3, 4, 5]
-    True
 
