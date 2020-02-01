@@ -50,8 +50,7 @@ Now use it:
     >>> own_list = MyList()
     >>> print(own_list)
     []
-    >>> own_list.print_sorted()
-    []
+
 
     >>> own_list = MyList([])
     >>> print(own_list.print_sorted)
@@ -109,9 +108,3 @@ Now use it:
     [1, 2, 3, 4, 5]
     True
 
-    >>> my_list = MyList()
-
-    >>> my_list.print_sorted()
-    []
-    >>> print(my_list)
-    []
