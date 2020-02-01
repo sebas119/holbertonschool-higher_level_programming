@@ -84,10 +84,19 @@ Now use it:
     >>> own_list = MyList([1, 2, 3])
     >>> new_list = own_list.print_sorted()
     [1, 2, 3]
+
+    >>> isinstance(new_list, list)
+    False
+
+    >>> type(new_list) == list
+    False
+
     >>> own_list is new_list
     False
+
     >>> own_list == new_list
     False
+
     >>> print(type(new_list))
     <class 'NoneType'>
     >>> print(type(own_list))
