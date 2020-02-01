@@ -84,7 +84,9 @@ Now use it:
     >>> own_list = MyList([1, 2, 3])
     >>> new_list = own_list.print_sorted()
     [1, 2, 3]
-    >>> print(type(new_list))
-    <class 'NoneType'>
     >>> own_list is new_list
     False
+    >>> own_list == new_list
+    False
+    >>> print(type(new_list))
+    <class 'NoneType'>
