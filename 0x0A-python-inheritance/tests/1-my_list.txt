@@ -70,3 +70,21 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+    >>> own_list = MyList([1, 2, 3])
+    >>> own_list.print_sorted() == own_list
+    [1, 2, 3]
+    False
+
+    >>> own_list = MyList([1, 2, 3])
+    >>> own_list.print_sorted() is own_list
+    [1, 2, 3]
+    False
+
+    >>> own_list = MyList([1, 2, 3])
+    >>> new_list = own_list.print_sorted()
+    [1, 2, 3]
+    >>> print(type(new_list))
+    <class 'NoneType'>
+    >>> own_list is new_list
+    False
