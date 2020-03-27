@@ -4,7 +4,7 @@
 """
 
 if __name__ == "__main__":
-        
+
     import sys
 
     if len(sys.argv) > 3:
@@ -14,11 +14,17 @@ if __name__ == "__main__":
         password = sys.argv[2]
         db_name = sys.argv[3]
 
-        conn = MySQLdb.connect(host="localhost", port=3306, user=username,
-                            passwd=password, db=db_name, charset="utf8")
+        conn = MySQLdb.connect(
+            host="localhost", port=3306, user=username,
+            passwd=password, db=db_name, charset="utf8"
+        )
         cur = conn.cursor()
         cur.execute(
-            "SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id")
+            """SELECT * FROM states
+            WHERE states.name
+            LIKE 'N%'
+            ORDER BY states.id"""
+        )
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
