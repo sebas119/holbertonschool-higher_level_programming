@@ -18,4 +18,5 @@ if __name__ == "__main__":
         print("Not found")
     else:
         print(state_query.id)
+    Base.metadata.create_all(engine)
     session.close()
