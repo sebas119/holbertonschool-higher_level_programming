@@ -22,7 +22,7 @@ if __name__ == "__main__":
         cur.execute(
             """SELECT * FROM states
             WHERE states.name
-            LIKE 'N%'
+            LIKE BINARY 'N%'
             ORDER BY states.id"""
         )
         query_rows = cur.fetchall()
