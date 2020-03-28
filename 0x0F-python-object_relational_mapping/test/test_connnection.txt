@@ -1,3 +1,6 @@
 # test_connnection
 
 conn = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="root", db="hbtn_0e_0_usa", charset="utf8")
+
+engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        'root', 'root', 'hbtn_0e_6_usa'), pool_pre_ping=True)
