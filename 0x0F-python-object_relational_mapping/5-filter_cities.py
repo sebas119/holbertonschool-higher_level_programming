@@ -26,10 +26,6 @@ if __name__ == "__main__":
         ORDER BY cities.id
     """, (state_name, ))
     query_rows = cur.fetchall()
-    for i in range(len(query_rows)):
-        if (i != len(query_rows) - 1):
-            print(query_rows[i][0], end=', ')
-        else:
-            print(query_rows[i][0])
+    print(", ".join(row[0] for row in query_rows))
     cur.close()
     conn.close()
