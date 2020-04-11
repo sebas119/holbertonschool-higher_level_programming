@@ -14,6 +14,15 @@ def find_peak(list_nums):
     elif size == 2:
         return max(list_nums)
 
-    for i in range(size):
-        if ((i == 0 or list_nums[i] >= list_nums[i - 1]) and (i == size - 1 or list_nums[i] >= list_nums[i + 1])):
-            return list_nums[i]
+    left = 0
+    right = size - 1
+
+    while (left < right):
+        m = int((left + right + 1) / 2)
+
+        if list_nums[m - 1] > list_nums[m]:
+            right = m - 1
+        else:
+            left = m
+    # Left == Right
+    return list_nums[left]
